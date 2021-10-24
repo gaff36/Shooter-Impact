@@ -1,0 +1,514 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.19f1 (5f5eb8bbdc25) revision 6250168'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.1288; Version 2009; 64bit' Language: 'en' Physical Memory: 16347 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Users\emr3s\Desktop\Emrezz Cave\2021.1.19f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Project X/Multi
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55449
+Successfully changed project path to: D:/Project X/Multi
+D:/Project X/Multi
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 164.78 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.19f1 (5f5eb8bbdc25)
+[Subsystems] Discovering subsystems at path C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Project X/Multi/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6052 MB
+    Driver:   30.0.14.9613
+Initialize mono
+Mono path[0] = 'C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Users/emr3s/Desktop/Emrezz Cave/2021.1.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003149 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 172.82 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.911 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3911ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (702ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (237ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (366ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (173ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (140ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007160 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Project X\Multi\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Project X\Multi\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 201.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.112 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2113ms)
+		BeginReloadAssembly (223ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (1808ms)
+			LoadAssemblies (150ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (706ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (78ms)
+			SetupLoadedEditorAssemblies (757ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (201ms)
+				BeforeProcessingInitializeOnLoad (123ms)
+				ProcessInitializeOnLoadAttributes (388ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3920 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 146.1 MB.
+System memory in use after: 146.3 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4367.
+Total: 4.345100 ms (FindLiveObjects: 0.282400 ms CreateObjectMapping: 0.281900 ms MarkObjects: 3.703700 ms  DeleteObjects: 0.075700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_13.png
+  artifactKey: Guid(a868b1b8fa8469f4fb4bb9f5f1cc4620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_13.png using Guid(a868b1b8fa8469f4fb4bb9f5f1cc4620) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06762d4275ce3e97db1b2527668cce4') in 0.219457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_3.png
+  artifactKey: Guid(4b6397ccae1cd5c4aae621b38ff69fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_3.png using Guid(4b6397ccae1cd5c4aae621b38ff69fbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f84a2156adef01fe90fb586186e7e86f') in 0.059713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_11.png
+  artifactKey: Guid(927fabf500ba5504791eb8be9e98240d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_11.png using Guid(927fabf500ba5504791eb8be9e98240d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6467df4b34a10201ddefd44fca6c8e4') in 0.045327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_2.png
+  artifactKey: Guid(738a23ca8da03d246a3479ab02c575a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_2.png using Guid(738a23ca8da03d246a3479ab02c575a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09a4f0aa49f02d77ec6367d56ed92404') in 0.066368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_5.png
+  artifactKey: Guid(3eec7d7a66f479441931440a42a073ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_5.png using Guid(3eec7d7a66f479441931440a42a073ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62fc7f79485f8bde79eb51139650942b') in 0.078384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000493 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_1.png
+  artifactKey: Guid(45f2ae20ef864244b89b4832223bee8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_1.png using Guid(45f2ae20ef864244b89b4832223bee8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4464f172b41d6097506c2dae3faef3f9') in 0.041004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_7.png
+  artifactKey: Guid(6f41e11900e3a8b4d859bad66cd02cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_7.png using Guid(6f41e11900e3a8b4d859bad66cd02cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0eaf7eb6151d0525afa66a233556848') in 0.050211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_16.png
+  artifactKey: Guid(87e57154f6a011c41892b3945e18f8b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_16.png using Guid(87e57154f6a011c41892b3945e18f8b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '380eab96a02c40c10a086421994ab6b0') in 0.034624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_15.png
+  artifactKey: Guid(2ca079d9065a5cb4fa9a8f2c8bf62aed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_15.png using Guid(2ca079d9065a5cb4fa9a8f2c8bf62aed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d03bda0e064de922e4a34105090ec2') in 0.039835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle
+  artifactKey: Guid(4c47648ae78bf074580e1de8abe3ad3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle using Guid(4c47648ae78bf074580e1de8abe3ad3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004543c19eb9fa7b52a362933cd7af2b') in 0.006561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_9.png
+  artifactKey: Guid(dd4eabdb003cb9f41b491500390f5d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_9.png using Guid(dd4eabdb003cb9f41b491500390f5d3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a34309d2373331cf5a7cccb73c322ef') in 0.071533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_8.png
+  artifactKey: Guid(3604c2d57a542a2429764a61dee21fcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_8.png using Guid(3604c2d57a542a2429764a61dee21fcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f1acd79d6201558dd611be9d7015fae') in 0.041026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_14.png
+  artifactKey: Guid(61e13c204b486aa449809c3a268615ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_14.png using Guid(61e13c204b486aa449809c3a268615ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4b05efbebd6ea27b04ecce04bc6fa45') in 0.038607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_0.png
+  artifactKey: Guid(53a380b87ee5aab4ea2ba3810316c27b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_0.png using Guid(53a380b87ee5aab4ea2ba3810316c27b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1d5a855e3320d2bab852d0a54ccffa3') in 0.015319 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_4.png
+  artifactKey: Guid(f6eeb66f1df96f7458bf2fa35cda545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_4.png using Guid(f6eeb66f1df96f7458bf2fa35cda545c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57b8ffa598b13ddc722acfca7f5e1421') in 0.044981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_18.png
+  artifactKey: Guid(8725cc45788d0474d9d9b1d105b6d2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_18.png using Guid(8725cc45788d0474d9d9b1d105b6d2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13bcfcb2fb7f150393bd807f1ebb673') in 0.049284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_12.png
+  artifactKey: Guid(ac089891c0146474a9be82d3920c9831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_12.png using Guid(ac089891c0146474a9be82d3920c9831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f63eb69c1813997b9e897c53e9d6882') in 0.072733 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_17.png
+  artifactKey: Guid(6b698f6c0f38a4343899073e3a8da006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_17.png using Guid(6b698f6c0f38a4343899073e3a8da006) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f9c8e97b78f49e78de0c2a9a158d69b') in 0.029322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_6.png
+  artifactKey: Guid(3552c01f3aa33ef4a9362c3f7d4c5776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_6.png using Guid(3552c01f3aa33ef4a9362c3f7d4c5776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee0029e8d5be0414ff1eaaa8fcf94d1d') in 0.046573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_19.png
+  artifactKey: Guid(b2d9f600f24581c458b59b9333c8c285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_19.png using Guid(b2d9f600f24581c458b59b9333c8c285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5d01e817f6cd608c09dbe1cfaeaa49') in 0.063918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_10.png
+  artifactKey: Guid(bacd7e25a39f48940900882690eb9fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_10.png using Guid(bacd7e25a39f48940900882690eb9fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e333b0158e7778004247fe5f20dc1243') in 0.094823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.020458 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle
+  artifactKey: Guid(a12d37c42d0824a40a60dcb5800a1f99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle using Guid(a12d37c42d0824a40a60dcb5800a1f99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab6eb8aeb7bdfcd6afe4d41bd5a2a3d4') in 0.026153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.029240 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png
+  artifactKey: Guid(51ebe1027281dc3468bd7e3a9226eb9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png using Guid(51ebe1027281dc3468bd7e3a9226eb9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e5338e94164d3d0ad7390ada3e14e7') in 0.061295 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_13.png
+  artifactKey: Guid(7c97ad638af18514cae10bd64232c1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_13.png using Guid(7c97ad638af18514cae10bd64232c1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a439a81a726ab3692268fb66df1ab5d') in 0.053661 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_1.png
+  artifactKey: Guid(59a9d5d4444927e4780331420800322a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_1.png using Guid(59a9d5d4444927e4780331420800322a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e094ada33510420d24b2346a812823fb') in 0.057047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_5.png
+  artifactKey: Guid(a007dcb7a3749b54493189a1cfc1112a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_5.png using Guid(a007dcb7a3749b54493189a1cfc1112a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ccb7ecccce29e9b95c598781a6f7ca3') in 0.049107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_9.png
+  artifactKey: Guid(24d26a75ae8198e4287119eb2a2be65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_9.png using Guid(24d26a75ae8198e4287119eb2a2be65b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17167e701883ca98a0830ee40ef73307') in 0.061556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_15.png
+  artifactKey: Guid(dee705a440d9b6243b24123261d509b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_15.png using Guid(dee705a440d9b6243b24123261d509b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f082d27c8a4fa3fd4f10f183c2fd707d') in 0.042584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_17.png
+  artifactKey: Guid(7d9aa030eeab4d045b3dfa4bebe932be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_17.png using Guid(7d9aa030eeab4d045b3dfa4bebe932be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aa726e68ae2190f545e9251b945f49b') in 0.038489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_4.png
+  artifactKey: Guid(ff2d69a93ffdbae4f84d3969a0adf551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_4.png using Guid(ff2d69a93ffdbae4f84d3969a0adf551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f2149c6535808094b923bac3dd9e6fb') in 0.044627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_14.png
+  artifactKey: Guid(f46e5e07b63c531439eb4d889ca46d02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_14.png using Guid(f46e5e07b63c531439eb4d889ca46d02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b86c4aa782f4602e1bfb36dbeb1175b') in 0.059687 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png
+  artifactKey: Guid(cbaf70fe0830fe84fb81ab01edffd3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png using Guid(cbaf70fe0830fe84fb81ab01edffd3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed782d896de361f1c54512ed73133720') in 0.060634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_7.png
+  artifactKey: Guid(2fc1d1e7125aaf8449dbc0b3d4c77e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_7.png using Guid(2fc1d1e7125aaf8449dbc0b3d4c77e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4e1962a6cda55628076f7a8c04a85fd') in 0.038627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_12.png
+  artifactKey: Guid(ab7f08c7896f24a4a904339d9ccee5c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_12.png using Guid(ab7f08c7896f24a4a904339d9ccee5c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0693a54e15dd28fbe1f12a199e91a954') in 0.038503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_3.png
+  artifactKey: Guid(bae1b32e77a567042bee7dd8db995fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_3.png using Guid(bae1b32e77a567042bee7dd8db995fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d768c23c50089f46122c1229b0e775') in 0.049018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_10.png
+  artifactKey: Guid(05e2570c5c259c3459f38f9ee9a5f479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_10.png using Guid(05e2570c5c259c3459f38f9ee9a5f479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e9777ede32a0be4caad3a48aa232b4') in 0.056358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_6.png
+  artifactKey: Guid(66969fcad7418234e806b221340121a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_6.png using Guid(66969fcad7418234e806b221340121a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9dfdd1c0016923be318b5417c1a3ea8') in 0.034471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_8.png
+  artifactKey: Guid(3708cd9bb595936448879ab74b9da751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_8.png using Guid(3708cd9bb595936448879ab74b9da751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f660ee22399db13873b0adeb0f2c935') in 0.046233 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_2.png
+  artifactKey: Guid(89a7560e11c5363479128f04b6dd2802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_2.png using Guid(89a7560e11c5363479128f04b6dd2802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a7013b7dada1a0d6a0424ef7eaace31') in 0.045176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_11.png
+  artifactKey: Guid(696d7224572161a4b9b9edd457bd9f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_11.png using Guid(696d7224572161a4b9b9edd457bd9f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '751d6f844825cf370315ca9563a069fd') in 0.046095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_16.png
+  artifactKey: Guid(4d33f56a9ab30924989aab76900b7260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_16.png using Guid(4d33f56a9ab30924989aab76900b7260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f06bf6ce9b1f260a4b0dbf305ecaaef') in 0.025335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_18.png
+  artifactKey: Guid(a3cf605bf0f357c429c89a65f0415e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_18.png using Guid(a3cf605bf0f357c429c89a65f0415e7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '969b5febbd6126e066aab2dad9f62cd5') in 0.068533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 58.141292 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move
+  artifactKey: Guid(38c4a40821bc2c847a961b6912bee9ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move using Guid(38c4a40821bc2c847a961b6912bee9ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd5bcb879a772cb9581ca8632384ee3') in 0.046542 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.036258 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png
+  artifactKey: Guid(61fb6be35dc9d9048abe1a49774c5fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png using Guid(61fb6be35dc9d9048abe1a49774c5fc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c61e6d72e45026017de4012e064d838') in 0.022106 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_11.png
+  artifactKey: Guid(0c204e8c572962846a1d28889bc0674b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_11.png using Guid(0c204e8c572962846a1d28889bc0674b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9ff7310c5a1e37289a99f4b9efe273e') in 0.070525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_13.png
+  artifactKey: Guid(09d43d09fad760948b7df9bc20625085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_13.png using Guid(09d43d09fad760948b7df9bc20625085) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1983e9f975bf7d24589b9dd37aacfbec') in 0.059774 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000600 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_17.png
+  artifactKey: Guid(4f0c68b2aff20c04d819a61bf79140a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_17.png using Guid(4f0c68b2aff20c04d819a61bf79140a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcd4c16acd1abf6e337423ae53a15ed5') in 0.025686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png
+  artifactKey: Guid(67e33bc7ff9245d4d816f83defe1e818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png using Guid(67e33bc7ff9245d4d816f83defe1e818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e5728d170c19fe39adcb7e65caca9f7') in 0.056226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png
+  artifactKey: Guid(11c36efcbcbfe5b4086d67524cd79826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png using Guid(11c36efcbcbfe5b4086d67524cd79826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89a95027102514484cf143c6a9965c71') in 0.036124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png
+  artifactKey: Guid(aeac569fd95c1804f9caadaa2843deb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png using Guid(aeac569fd95c1804f9caadaa2843deb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9099d41c4409c843c4da2d0a7dc6c346') in 0.044226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_2.png
+  artifactKey: Guid(82fdd143c313e5d4bb12c82ffbf8a1e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_2.png using Guid(82fdd143c313e5d4bb12c82ffbf8a1e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9d80524868107fd136e6440d85023c5') in 0.036505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png
+  artifactKey: Guid(f89fbd74eecefb44382adefa78f6f3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png using Guid(f89fbd74eecefb44382adefa78f6f3ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279deb74cb29c0db6318e2587f408c38') in 0.027862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_18.png
+  artifactKey: Guid(378d00f37531e7143b458c0f6980a953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_18.png using Guid(378d00f37531e7143b458c0f6980a953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c440acc5abb867762cd00f0de4164d7') in 0.037508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png
+  artifactKey: Guid(377ca1cac358843479c22ec4329cbcac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png using Guid(377ca1cac358843479c22ec4329cbcac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f4c1212d7f3d801fbe446333dd5584a') in 0.035634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_8.png
+  artifactKey: Guid(81fcece9ab826934497c747967f248c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_8.png using Guid(81fcece9ab826934497c747967f248c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5daa3bb52f7bed0a2833986f5227d9c0') in 0.024348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_4.png
+  artifactKey: Guid(b463256b76de3a24f9123dc46e42c3e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_4.png using Guid(b463256b76de3a24f9123dc46e42c3e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08f148ab3640d1d9e032087a003fddd6') in 0.055630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_7.png
+  artifactKey: Guid(81d210461a83b5c4aa9ae58b0294825b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_7.png using Guid(81d210461a83b5c4aa9ae58b0294825b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f6fc4b4460f8b1c45159af9e1bae81') in 0.042628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_14.png
+  artifactKey: Guid(8d0932fc0a00e524cb121b79cd8a0a6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_14.png using Guid(8d0932fc0a00e524cb121b79cd8a0a6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dab299c42b331412f8710565c13716cd') in 0.026968 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_10.png
+  artifactKey: Guid(b8cb9cb35c8cb494d901e9f98fdc2934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_10.png using Guid(b8cb9cb35c8cb494d901e9f98fdc2934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39bda14820e2277a58be4134d7ee0c61') in 0.024270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png
+  artifactKey: Guid(12f93ec0a61b8e444b3e9ff77ba6a037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png using Guid(12f93ec0a61b8e444b3e9ff77ba6a037) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f1f420900dd3f2dadbbd74302537f78') in 0.033715 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_1.png
+  artifactKey: Guid(972b404ca7c7e764498fc77ea2b6a5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_1.png using Guid(972b404ca7c7e764498fc77ea2b6a5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f595dd5a252b94f9e2b3fa04580a69cf') in 0.036561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_5.png
+  artifactKey: Guid(951f24b7502a9bc47a2ecff59d616139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_5.png using Guid(951f24b7502a9bc47a2ecff59d616139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f3be288a46035dff9239f2d296d7fce') in 0.024598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_16.png
+  artifactKey: Guid(6b0e1f1b07f086546959f946ff3b7f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Top_Down_Survivor/handgun/move/survivor-move_handgun_16.png using Guid(6b0e1f1b07f086546959f946ff3b7f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8796dd8538ab1ce8f61bda5f9b0b701a') in 0.037470 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
