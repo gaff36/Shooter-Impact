@@ -44,6 +44,9 @@ MonoBehaviour:
   - doEnable
   - shoot
   - hurt
+  - hurtHandler
+  - endHurt
+  - movementAnimations
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

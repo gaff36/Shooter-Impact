@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int movementSpeed;
     [SerializeField] private float rotationSpeed;
 
+    // Hurt Variables
+
+    private bool isHurt;
+    private float lastHurtTime;
+    [SerializeField] private float hurtRecoveryCooldown;
+
     //
 
     [SerializeField] private GameObject bulletPrefab;
@@ -28,11 +34,14 @@ public class PlayerController : MonoBehaviour
 
     private int maxHealth = 100;
     public int currentHealth;
+    private Animator playerAnimator;
 
     //
     
     private void Start()
     {
+        isHurt = false;
+        playerAnimator = GetComponent<Animator>();
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -42,6 +51,9 @@ public class PlayerController : MonoBehaviour
         shootingHandler();
         movementHandler();
         rotationHandler();
+
+        GetComponent<PhotonView>().RPC("endHurt", RpcTarget.AllBuffered);
+
         playerCamera.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
@@ -55,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 targetVelocity = new Vector2(horizontalDirection * movementSpeed, verticalDirection * movementSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+        //GetComponent<PhotonView>().RPC("movementAnimations", RpcTarget.AllBuffered, horizontalDirection, verticalDirection);
     }
 
     /*
@@ -79,28 +93,41 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            
-            //GameObject temp = GameObject.Instantiate(bulletPrefab, shootingPosition.position, rotation);
-            //bulletProjectile = temp.GetComponent<Projectile>();
-            //bulletProjectile.shoot(direction);
-
             GameObject temp = PhotonNetwork.Instantiate(bulletPrefab.name, shootingPosition.position, rotation);
-            temp.gameObject.GetComponent<PhotonView>().RPC("shoot", RpcTarget.AllBuffered, direction);
-
-            /*
-            bulletProjectile = temp.GetComponent<Projectile>();
-            bulletProjectile.shoot(direction);
-            */
-            
+            temp.gameObject.GetComponent<PhotonView>().RPC("shoot", RpcTarget.AllBuffered, direction);       
         }        
     }
 
     [PunRPC]
     public void hurt(int damage)
     {
+        lastHurtTime = Time.time;
+        isHurt = true;
         currentHealth -= damage;
+        playerAnimator.SetBool("hurt", true);
     }
 
-   
+    [PunRPC]
+    public void endHurt()
+    {
+        if (isHurt && Time.time >= lastHurtTime + hurtRecoveryCooldown)
+        {
+            isHurt = false;
+            playerAnimator.SetBool("hurt", false);
+        }
+    }
 
+    [PunRPC]
+    public void movementAnimations(float horizontalDirection, float verticalDirection)
+    {
+        if (horizontalDirection != 0 || verticalDirection != 0)
+        {
+            playerAnimator.SetBool("move", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("move", false);
+        }
+    }
+   
 }
