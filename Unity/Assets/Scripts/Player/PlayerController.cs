@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     //
 
     [SerializeField] private GameObject playerCamera;
+    [SerializeField] private GameObject playerCanvas;
 
     //
 
@@ -36,14 +37,23 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
     private Animator playerAnimator;
 
+
+    // Weapon Variables
+
+    private Weapon currentWeapon;
+    [SerializeField] private D_MachineGun machineGunData;
+    [SerializeField] private D_Pistol pistolData;
+     
     //
-    
+
     private void Start()
     {
-        isHurt = false;
         playerAnimator = GetComponent<Animator>();
-        currentHealth = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        isHurt = false;
+        GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
+        currentHealth = maxHealth;
+        
     }
 
     private void Update()
@@ -52,9 +62,12 @@ public class PlayerController : MonoBehaviour
         movementHandler();
         rotationHandler();
 
-        GetComponent<PhotonView>().RPC("endHurt", RpcTarget.AllBuffered);
+        if (Input.GetKeyDown(KeyCode.F)) GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
 
+        GetComponent<PhotonView>().RPC("endHurt", RpcTarget.AllBuffered);
+        
         playerCamera.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        playerCanvas.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     /*
@@ -65,9 +78,8 @@ public class PlayerController : MonoBehaviour
         float horizontalDirection = Input.GetAxis("Horizontal");
         float verticalDirection = Input.GetAxis("Vertical");
 
-        Vector3 targetVelocity = new Vector2(horizontalDirection * movementSpeed, verticalDirection * movementSpeed);
+        Vector3 targetVelocity = new Vector2(horizontalDirection * movementSpeed, verticalDirection * currentWeapon.movementSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
         //GetComponent<PhotonView>().RPC("movementAnimations", RpcTarget.AllBuffered, horizontalDirection, verticalDirection);
     }
 
@@ -129,5 +141,30 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetBool("move", false);
         }
     }
-   
+
+    [PunRPC]
+    public void changeWeapon(Weapon newWeapon)
+    {
+        currentWeapon = newWeapon;       
+    }
+
+ 
+    [PunRPC]
+    public void onClickChangeWeapon()
+    {
+        if(currentWeapon == null)
+        {
+            changeWeapon(new Pistol(pistolData));
+        }
+        else if(currentWeapon.animatorID == 0)
+        {
+            changeWeapon(new Pistol(pistolData));
+        }
+        else if (currentWeapon.animatorID == 1)
+        {
+            changeWeapon(new MachineGun(machineGunData));
+        }
+        playerAnimator.SetInteger("weaponID", currentWeapon.animatorID);
+    }
+ 
 }

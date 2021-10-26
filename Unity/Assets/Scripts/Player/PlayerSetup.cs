@@ -22,7 +22,7 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
         else
         {
            GetComponent<PlayerController>().enabled = false;
-            playerCamera.GetComponent<Camera>().enabled = false;
+           playerCamera.GetComponent<Camera>().enabled = false;
         }
 
         SetPlayerUI();
