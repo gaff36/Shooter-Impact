@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MachineGun : Weapon
 {
-    public MachineGun(D_MachineGun data)
+    public MachineGun(D_MachineGun data, int ammoLeft) : base(ammoLeft)
     {
         fireRate = data.fireRate;
         movementSpeed = data.movementSpeed;
-        animatorID = data.animatorID;
         damageAmount = data.damageAmount;
+        maxAmmo = data.maxAmmo;
+        ammoLeft = this.ammoLeft;
     }
 }

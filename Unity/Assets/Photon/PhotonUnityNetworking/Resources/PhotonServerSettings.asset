@@ -50,6 +50,9 @@ MonoBehaviour:
   - changeWeapon
   - animationHandler
   - onClickChangeWeapon
+  - die
+  - equipWeapon
+  - dropWeapon
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

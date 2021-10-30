@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Pistol : Weapon
 {
-    public Pistol(D_Pistol data)
+    public Pistol(D_Pistol data, int ammoLeft) : base(ammoLeft)
     {
         fireRate = data.fireRate;
         movementSpeed = data.movementSpeed;
-        animatorID = data.animatorID;
         damageAmount = data.damageAmount;
+        maxAmmo = data.maxAmmo;
+        ammoLeft = this.ammoLeft;
     }
 }

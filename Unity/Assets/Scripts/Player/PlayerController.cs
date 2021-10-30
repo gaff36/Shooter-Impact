@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     private Weapon currentWeapon;
     [SerializeField] private D_MachineGun machineGunData;
     [SerializeField] private D_Pistol pistolData;
+
+    [SerializeField] private GameObject machineGunPrefab;
      
     //
 
@@ -61,10 +63,12 @@ public class PlayerController : MonoBehaviour
         shootingHandler();
         movementHandler();
         rotationHandler();
+        GetComponent<PhotonView>().RPC("dropWeapon", RpcTarget.AllBuffered);
 
         if (Input.GetKeyDown(KeyCode.F)) GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
 
         GetComponent<PhotonView>().RPC("endHurt", RpcTarget.AllBuffered);
+        if(currentHealth <= 0) GetComponent<PhotonView>().RPC("die", RpcTarget.AllBuffered);
         
         playerCamera.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         playerCanvas.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -99,15 +103,22 @@ public class PlayerController : MonoBehaviour
     */
     private void shootingHandler()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1))
+        if(Input.GetKeyDown(KeyCode.Mouse1) && currentWeapon.ammoLeft > 0)
         {
             Vector2 direction = playerCamera.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             GameObject temp = PhotonNetwork.Instantiate(bulletPrefab.name, shootingPosition.position, rotation);
-            temp.gameObject.GetComponent<PhotonView>().RPC("shoot", RpcTarget.AllBuffered, direction);       
+            temp.gameObject.GetComponent<PhotonView>().RPC("shoot", RpcTarget.AllBuffered, direction);
+            currentWeapon.ammoLeft--;
         }        
+    }
+
+    [PunRPC]
+    public void die()
+    {
+        PhotonNetwork.Destroy(gameObject.GetComponent<PhotonView>());
     }
 
     [PunRPC]
@@ -142,6 +153,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
     [PunRPC]
     public void changeWeapon(Weapon newWeapon)
     {
@@ -154,17 +166,48 @@ public class PlayerController : MonoBehaviour
     {
         if(currentWeapon == null)
         {
-            changeWeapon(new Pistol(pistolData));
+            changeWeapon(new Weapon(2,8,0,20,60));
         }
-        else if(currentWeapon.animatorID == 0)
+        else if(currentWeapon.id == 0)
         {
-            changeWeapon(new Pistol(pistolData));
+            changeWeapon(new Weapon(2, 18, 1, 10, 45));
         }
-        else if (currentWeapon.animatorID == 1)
+        else if (currentWeapon.id == 1)
         {
-            changeWeapon(new MachineGun(machineGunData));
+            changeWeapon(new Weapon(2, 8, 0, 20, 60));
         }
-        playerAnimator.SetInteger("weaponID", currentWeapon.animatorID);
+        playerAnimator.SetInteger("weaponID", currentWeapon.id);
     }
- 
+
+    [PunRPC]
+    public void equipWeapon(int id, int ammoLeft)
+    {
+        if(id == 0)
+        {
+            currentWeapon = new MachineGun(machineGunData, ammoLeft);
+        }
+        else if (id == 1)
+        {
+            currentWeapon = new Pistol(pistolData, ammoLeft);
+        }
+
+        playerAnimator.SetInteger("weaponID", currentWeapon.id);
+    }
+
+    [PunRPC]
+    public void dropWeapon()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("DROPPING");
+
+            if (currentWeapon.id == 0)
+            {
+                GameObject temp = PhotonNetwork.Instantiate(machineGunPrefab.name, gameObject.transform.position, Quaternion.identity);
+                temp.GetComponent<WeaponWorld>().ammoLeft = currentWeapon.ammoLeft;
+            }
+        }
+
+    }
+
 }

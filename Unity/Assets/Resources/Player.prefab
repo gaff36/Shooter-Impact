@@ -419,6 +419,7 @@ MonoBehaviour:
   currentHealth: 0
   machineGunData: {fileID: 11400000, guid: 17085de44c166f34f90d195df66a4541, type: 2}
   pistolData: {fileID: 11400000, guid: fe2687f3ead1f4543ae90ff5fb3367d4, type: 2}
+  machineGunPrefab: {fileID: 7855754401137025791, guid: 74f43b876a1e28f4bbb2ed482a6d330c, type: 3}
 --- !u!114 &7862283047076200302
 MonoBehaviour:
   m_ObjectHideFlags: 0
