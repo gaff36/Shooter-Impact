@@ -11,5 +11,6 @@ public class MachineGun : Weapon
         damageAmount = data.damageAmount;
         maxAmmo = data.maxAmmo;
         ammoLeft = this.ammoLeft;
+        id = 0;
     }
 }

@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
 
     private bool isHurt;
     private float lastHurtTime;
+    
     [SerializeField] private float hurtRecoveryCooldown;
 
     //
 
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform shootingPosition;
+    [SerializeField] private Transform machineGunShootingPosition;
+    [SerializeField] private Transform pistolShootingPosition;
+    private Transform activeShootingPosition;
     private Projectile bulletProjectile;
 
     //
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private int maxHealth = 100;
     public int currentHealth;
     private Animator playerAnimator;
+    private float lastShotTime;
 
 
     // Weapon Variables
@@ -43,8 +47,11 @@ public class PlayerController : MonoBehaviour
     private Weapon currentWeapon;
     [SerializeField] private D_MachineGun machineGunData;
     [SerializeField] private D_Pistol pistolData;
+    [SerializeField] private D_Knife knifeData;
 
     [SerializeField] private GameObject machineGunPrefab;
+    [SerializeField] private GameObject pistolPrefab;
+    private Knife knife;
      
     //
 
@@ -55,7 +62,7 @@ public class PlayerController : MonoBehaviour
         isHurt = false;
         GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
         currentHealth = maxHealth;
-        
+        activeShootingPosition = machineGunShootingPosition;
     }
 
     private void Update()
@@ -103,14 +110,15 @@ public class PlayerController : MonoBehaviour
     */
     private void shootingHandler()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1) && currentWeapon.ammoLeft > 0)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && currentWeapon.ammoLeft > 0 && Time.time >= lastShotTime + currentWeapon.fireRate)
         {
             Vector2 direction = playerCamera.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            GameObject temp = PhotonNetwork.Instantiate(bulletPrefab.name, shootingPosition.position, rotation);
+            GameObject temp = PhotonNetwork.Instantiate(bulletPrefab.name, activeShootingPosition.position, rotation);
             temp.gameObject.GetComponent<PhotonView>().RPC("shoot", RpcTarget.AllBuffered, direction);
+            lastShotTime = Time.time;
             currentWeapon.ammoLeft--;
         }        
     }
@@ -185,12 +193,15 @@ public class PlayerController : MonoBehaviour
         if(id == 0)
         {
             currentWeapon = new MachineGun(machineGunData, ammoLeft);
+            activeShootingPosition = machineGunShootingPosition;
         }
         else if (id == 1)
         {
             currentWeapon = new Pistol(pistolData, ammoLeft);
+            activeShootingPosition = pistolShootingPosition;
         }
 
+        Debug.Log("AMMO_LEFT: " + currentWeapon.ammoLeft);
         playerAnimator.SetInteger("weaponID", currentWeapon.id);
     }
 
@@ -199,12 +210,16 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            Debug.Log("DROPPING");
 
             if (currentWeapon.id == 0)
             {
                 GameObject temp = PhotonNetwork.Instantiate(machineGunPrefab.name, gameObject.transform.position, Quaternion.identity);
-                temp.GetComponent<WeaponWorld>().ammoLeft = currentWeapon.ammoLeft;
+                temp.GetComponent<WeaponWorld>().weapon = new MachineGun(machineGunData, currentWeapon.ammoLeft);
+            }
+            else if (currentWeapon.id == 1)
+            {
+                GameObject temp = PhotonNetwork.Instantiate(pistolPrefab.name, gameObject.transform.position, Quaternion.identity);
+                temp.GetComponent<WeaponWorld>().weapon = new Pistol(pistolData, currentWeapon.ammoLeft);
             }
         }
 

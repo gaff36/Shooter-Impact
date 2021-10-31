@@ -17,16 +17,14 @@ public class Weapon
     {
         this.fireRate = fireRate;
         this.movementSpeed = movementSpeed;
-        this.id = id;
         this.damageAmount = damageAmount;
         this.ammoLeft = ammoLeft;
     }
 
-    public Weapon(float fireRate, float movementSpeed, int id, int damageAmount)
+    public Weapon(float fireRate, float movementSpeed, int damageAmount)
     {
         this.fireRate = fireRate;
         this.movementSpeed = movementSpeed;
-        this.id = id;
         this.damageAmount = damageAmount;
         ammoLeft = maxAmmo;
     }

@@ -6,14 +6,10 @@ using Photon.Pun;
 
 public class WeaponWorld : MonoBehaviour
 {
-    private Weapon weapon;
+    public Weapon weapon;
     [SerializeField] private int id;
     [SerializeField] private D_MachineGun machineGunData;
     [SerializeField] private D_Pistol pistolData;
-
-    public int ammoLeft;
-
-
 
     // CONSTRUCTORS
 
@@ -22,14 +18,33 @@ public class WeaponWorld : MonoBehaviour
         this.weapon = weapon;
     }
 
-    public WeaponWorld(D_MachineGun data, int ammoLeft)
-    {
-        weapon = new MachineGun(data, ammoLeft);
-    }
-
     public WeaponWorld(D_Pistol data, int ammoLeft)
     {
         weapon = new Pistol(data, ammoLeft);
+    }
+
+    public WeaponWorld(int ammoLeft)
+    {
+        if(id == 0)
+        {
+            weapon = new MachineGun(machineGunData, ammoLeft);
+        }
+        else if (id == 1)
+        {
+            weapon = new Pistol(pistolData, ammoLeft);
+        }
+    }
+
+    public void Awake()
+    {
+        if (id == 0)
+        {
+            weapon = new MachineGun(machineGunData, machineGunData.maxAmmo);
+        }
+        else if (id == 1)
+        {
+            weapon = new Pistol(pistolData, pistolData.maxAmmo);
+        }
     }
 
 
@@ -39,8 +54,9 @@ public class WeaponWorld : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && (Input.GetKey(KeyCode.E)))
-        {          
-            collision.gameObject.GetComponent<PhotonView>().RPC("equipWeapon", RpcTarget.AllBuffered, id, ammoLeft);
+        {
+            collision.gameObject.GetComponent<PhotonView>().RPC("equipWeapon", RpcTarget.AllBuffered, id, weapon.ammoLeft);
+            PhotonNetwork.Destroy(gameObject.GetComponent<PhotonView>());
         }
     }
 }
