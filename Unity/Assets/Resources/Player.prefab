@@ -96,6 +96,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bea5f4f9b6292c4eb469e676fba4d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3353163324000434605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8418769453654789244}
+  m_Layer: 0
+  m_Name: KnifeFirePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8418769453654789244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353163324000434605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.103, y: 0.397, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8342396308287945177}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4093005483153941837
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +290,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8342396308287945177}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1966869380111106972
 Camera:
@@ -345,7 +375,7 @@ RectTransform:
   m_Children:
   - {fileID: 8021852245221728606}
   m_Father: {fileID: 8342396308287945177}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -481,6 +511,7 @@ Transform:
   - {fileID: 6114022019759920504}
   - {fileID: 8342396308538658679}
   - {fileID: 3987223155937470996}
+  - {fileID: 8418769453654789244}
   - {fileID: 8424034414996385107}
   - {fileID: 678781929999399845}
   m_Father: {fileID: 0}
@@ -542,12 +573,13 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6306783208247521537, guid: 3ab058a3df86ee846a9bef2d71a41d51, type: 3}
   machineGunShootingPosition: {fileID: 8342396308538658679}
   pistolShootingPosition: {fileID: 3987223155937470996}
+  knifeShootingPosition: {fileID: 0}
   playerCamera: {fileID: 5731599803308088727}
   playerCanvas: {fileID: 5797607537049291087}
   currentHealth: 0
   machineGunData: {fileID: 11400000, guid: 17085de44c166f34f90d195df66a4541, type: 2}
   pistolData: {fileID: 11400000, guid: fe2687f3ead1f4543ae90ff5fb3367d4, type: 2}
-  knifeData: {fileID: 0}
+  knifeData: {fileID: 11400000, guid: c41a265ee894e5244866537d137ec2ad, type: 2}
   machineGunPrefab: {fileID: 7855754401137025791, guid: 74f43b876a1e28f4bbb2ed482a6d330c, type: 3}
   pistolPrefab: {fileID: 3946580140667283296, guid: 93c7b5b6eb6c34c4ab4298b10c947f34, type: 3}
 --- !u!114 &7862283047076200302

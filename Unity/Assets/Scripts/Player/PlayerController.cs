@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform machineGunShootingPosition;
     [SerializeField] private Transform pistolShootingPosition;
+    [SerializeField] private Transform knifeShootingPosition;
+
     private Transform activeShootingPosition;
     private Projectile bulletProjectile;
 
@@ -43,26 +45,30 @@ public class PlayerController : MonoBehaviour
 
 
     // Weapon Variables
-
-    private Weapon currentWeapon;
+ 
     [SerializeField] private D_MachineGun machineGunData;
     [SerializeField] private D_Pistol pistolData;
     [SerializeField] private D_Knife knifeData;
 
     [SerializeField] private GameObject machineGunPrefab;
     [SerializeField] private GameObject pistolPrefab;
+
     private Knife knife;
-     
+    private Weapon currentWeapon;
+    private Weapon activeWeapon;
+
     //
 
     private void Start()
     {
+        knife = new Knife(knifeData, knifeData.maxAmmo);    // Creating default knife for player
+        activeShootingPosition = knifeShootingPosition;     // Setting default fire position for knife
+        activeWeapon = knife;
+
         playerAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         isHurt = false;
-        GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
-        currentHealth = maxHealth;
-        activeShootingPosition = machineGunShootingPosition;
+        currentHealth = maxHealth;      
     }
 
     private void Update()
@@ -72,7 +78,7 @@ public class PlayerController : MonoBehaviour
         rotationHandler();
         GetComponent<PhotonView>().RPC("dropWeapon", RpcTarget.AllBuffered);
 
-        if (Input.GetKeyDown(KeyCode.F)) GetComponent<PhotonView>().RPC("onClickChangeWeapon", RpcTarget.AllBuffered);
+        if (Input.GetKeyDown(KeyCode.F)) GetComponent<PhotonView>().RPC("changeWeapon", RpcTarget.AllBuffered);
 
         GetComponent<PhotonView>().RPC("endHurt", RpcTarget.AllBuffered);
         if(currentHealth <= 0) GetComponent<PhotonView>().RPC("die", RpcTarget.AllBuffered);
@@ -89,7 +95,7 @@ public class PlayerController : MonoBehaviour
         float horizontalDirection = Input.GetAxis("Horizontal");
         float verticalDirection = Input.GetAxis("Vertical");
 
-        Vector3 targetVelocity = new Vector2(horizontalDirection * movementSpeed, verticalDirection * currentWeapon.movementSpeed);
+        Vector3 targetVelocity = new Vector2(horizontalDirection * movementSpeed, verticalDirection * activeWeapon.movementSpeed);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
         //GetComponent<PhotonView>().RPC("movementAnimations", RpcTarget.AllBuffered, horizontalDirection, verticalDirection);
     }
@@ -110,7 +116,8 @@ public class PlayerController : MonoBehaviour
     */
     private void shootingHandler()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse1) && currentWeapon.ammoLeft > 0 && Time.time >= lastShotTime + currentWeapon.fireRate)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && currentWeapon != null && activeWeapon == currentWeapon && currentWeapon.ammoLeft > 0 
+           && Time.time >= lastShotTime + currentWeapon.fireRate)
         {
             Vector2 direction = playerCamera.GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition) - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -161,30 +168,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
     [PunRPC]
-    public void changeWeapon(Weapon newWeapon)
+    public void changeWeapon()
     {
-        currentWeapon = newWeapon;       
-    }
-
- 
-    [PunRPC]
-    public void onClickChangeWeapon()
-    {
-        if(currentWeapon == null)
+        if (currentWeapon != null)
         {
-            changeWeapon(new Weapon(2,8,0,20,60));
-        }
-        else if(currentWeapon.id == 0)
-        {
-            changeWeapon(new Weapon(2, 18, 1, 10, 45));
-        }
-        else if (currentWeapon.id == 1)
-        {
-            changeWeapon(new Weapon(2, 8, 0, 20, 60));
-        }
-        playerAnimator.SetInteger("weaponID", currentWeapon.id);
+            if(activeWeapon.id == -1)
+            {
+                activeWeapon = currentWeapon;
+                if(currentWeapon.id == 0)
+                {
+                    activeShootingPosition = machineGunShootingPosition;
+                }
+                else if(currentWeapon.id == 1)
+                {
+                    activeShootingPosition = pistolShootingPosition;
+                }
+            }
+            else
+            {
+                activeWeapon = knife;
+                activeShootingPosition = knifeShootingPosition;
+            }
+            playerAnimator.SetInteger("weaponID", activeWeapon.id);
+        }         
     }
 
     [PunRPC]
@@ -203,6 +210,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("AMMO_LEFT: " + currentWeapon.ammoLeft);
         playerAnimator.SetInteger("weaponID", currentWeapon.id);
+        activeWeapon = currentWeapon;
     }
 
     [PunRPC]
