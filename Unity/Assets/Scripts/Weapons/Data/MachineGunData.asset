@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0.3
   movementSpeed: 8
-  damageAmount: 20
+  damageAmount: 1000
   maxAmmo: 60

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     {
         if(PhotonNetwork.IsConnected)
         {
-            int randomPoint = Random.Range(-5, 5);
+            int randomPoint = Random.Range(-8, 0);
             PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(randomPoint, randomPoint, 0f), Quaternion.identity);
         }
               
