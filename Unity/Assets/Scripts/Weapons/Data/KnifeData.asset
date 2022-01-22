@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4ab8645461e8e48898c3a9cc3887fc, type: 3}
   m_Name: KnifeData
   m_EditorClassIdentifier: 
-  fireRate: 0.3
-  movementSpeed: 20
-  damageAmount: 50
+  fireRate: 0.7
+  movementSpeed: 17
+  damageAmount: 1000
   maxAmmo: 9999999

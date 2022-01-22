@@ -20,16 +20,16 @@ public class PlayerItem : MonoBehaviourPunCallbacks
     private HorizontalLayoutGroup layoutGroup;
     private Player player;
 
-    ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
+    public ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable();
 
     private void Start()
     {
         backgroundImage = GetComponent<Image>();
         layoutGroup = FindObjectOfType<HorizontalLayoutGroup>();
+        if(GetComponent<PhotonView>().IsMine) UpdatePlayerItem(PhotonNetwork.LocalPlayer);
     }
 
     //////////////
-    
 
     public void SetPlayerInfo(Player _player)
     {
@@ -46,26 +46,30 @@ public class PlayerItem : MonoBehaviourPunCallbacks
 
     public void OnClickLeftArrow()
     {
-        if((int) playerProperties["playerAvatar"] == 0)
+        if(((int[])playerProperties["playerStats"])[2] == 0)
         {
-            playerProperties["playerAvatar"] = portraits.Length - 1;
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = portraits.Length - 1;
+            playerProperties["playerStats"] = temp;
         }
         else
         {
-            playerProperties["playerAvatar"] = (int)playerProperties["playerAvatar"] - 1;
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = ((int[])playerProperties["playerStats"])[2] - 1;
+            playerProperties["playerStats"] = temp;
         }
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
 
     public void OnClickRightArrow()
     {
-        if ((int)playerProperties["playerAvatar"] == portraits.Length - 1)
+        if (((int[])playerProperties["playerStats"])[2] == portraits.Length - 1)
         {
-            playerProperties["playerAvatar"] = 0;
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = 0;
+            playerProperties["playerStats"] = temp;
         }
         else
         {
-            playerProperties["playerAvatar"] = (int)playerProperties["playerAvatar"] + 1;
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = ((int[])playerProperties["playerStats"])[2] + 1;
+            playerProperties["playerStats"] = temp;
         }
         PhotonNetwork.SetPlayerCustomProperties(playerProperties);
     }
@@ -80,14 +84,19 @@ public class PlayerItem : MonoBehaviourPunCallbacks
 
     private void UpdatePlayerItem(Player player)
     {
-        if(player.CustomProperties.ContainsKey("playerAvatar"))
+        if(player.CustomProperties.ContainsKey("playerStats"))
         {
-            playerAvatar.sprite = portraits[(int)player.CustomProperties["playerAvatar"]];
-            playerProperties["playerAvatar"] = (int)player.CustomProperties["playerAvatar"];
+            Debug.Log("1_0");
+            playerAvatar.sprite = portraits[((int[])player.CustomProperties["playerStats"])[2]];
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = ((int[])player.CustomProperties["playerStats"])[2];
+            playerProperties["playerStats"] = temp;
         }
         else
         {
-            playerProperties["playerAvatar"] = 0;
+            Debug.Log("2_0");
+            int[] temp; temp = new int[3]; temp[0] = 0; temp[1] = 0; temp[2] = 0;
+            playerProperties["playerStats"] = temp;
+            if(player == PhotonNetwork.LocalPlayer)PhotonNetwork.SetPlayerCustomProperties(playerProperties);
         }
     }
 }

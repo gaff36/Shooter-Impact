@@ -16,6 +16,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [SerializeField] private Transform contentObject;
     [SerializeField] private GameObject startGameButton;
 
+    private RoomOptions roomOptions;
     private List<RoomItem> roomItemList;
     private List<PlayerItem> playerItemList;
     public PlayerItem playerItemPrefab;
@@ -30,21 +31,33 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
+        if(PhotonNetwork.)
+        {
+            PlayerItem newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
+            newPlayerItem.SetPlayerInfo(PhotonNetwork.LocalPlayer);
+            newPlayerItem.ApplyLocalChanges();
+        }
+        
         PhotonNetwork.AutomaticallySyncScene = true;
+
     }
 
     private void Start()
     {
+        roomOptions = new RoomOptions();
+        roomOptions.PublishUserId = true;
+        roomOptions.MaxPlayers = 5;
+        roomOptions.BroadcastPropsChangeToAll = true;
         roomItemList = new List<RoomItem>();
         playerItemList = new List<PlayerItem>();
-        PhotonNetwork.JoinLobby();  
+        PhotonNetwork.JoinLobby();
     }
 
     public void onClickCreate()
     {
         if (roomInputField.text.Length >= 1)
         {
-            PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = 3, BroadcastPropsChangeToAll = true });
+            PhotonNetwork.CreateRoom(roomInputField.text, roomOptions);
         }
     }
 
@@ -53,7 +66,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         lobbyPanel.SetActive(false);
         roomPanel.SetActive(true);
-        
+
         roomName.text = "Room Name: " + PhotonNetwork.CurrentRoom.Name;
         UpdatePlayerList();
     }
@@ -77,15 +90,25 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
         foreach (RoomInfo room in list)
         {
-            RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
-            newRoom.SetRoomName(room.Name);
-            roomItemList.Add(newRoom);
+            if (room.PlayerCount < room.MaxPlayers)
+            {              
+                RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
+                newRoom.SetRoomName(room.Name);
+                newRoom.SetRoomPlayerCount(room.PlayerCount + "/5");
+
+                roomItemList.Add(newRoom);
+            }
         }
     }
 
     public void JoinRoom(string roomName)
     {
         PhotonNetwork.JoinRoom(roomName);
+    }
+
+    public void JoinRandomRoom()
+    {
+        PhotonNetwork.JoinRandomRoom(null, 5);
     }
 
     public void OnClickLeaveRoom()
@@ -150,7 +173,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void OnClickStartGame()
     {
-        SceneManager.LoadScene("2");
+        SceneManager.LoadScene(3);
     }
 
 }

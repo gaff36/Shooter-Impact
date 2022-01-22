@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5518261648776038689}
   - component: {fileID: 8862642935687244194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AK_full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5951545005172947955}
   - component: {fileID: -9011498610084489915}
   - component: {fileID: 8899225905936380558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MachineGun
   m_TagString: Weapon
   m_Icon: {fileID: 0}

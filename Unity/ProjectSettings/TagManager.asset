@@ -6,15 +6,17 @@ TagManager:
   tags:
   - Projectile
   - Weapon
+  - Music
+  - HealthPack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - HealthPack
+  - Weapon
   - 
   - 
   - 

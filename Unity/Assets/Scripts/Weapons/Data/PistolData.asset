@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0c8f5b73538374da14eb9ab4f1bad7, type: 3}
   m_Name: PistolData
   m_EditorClassIdentifier: 
-  fireRate: 0.6
-  movementSpeed: 8
-  damageAmount: 7
+  fireRate: 0.5
+  movementSpeed: 14
+  damageAmount: 10
   maxAmmo: 45
