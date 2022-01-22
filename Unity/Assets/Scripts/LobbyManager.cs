@@ -31,13 +31,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        if(PhotonNetwork.)
-        {
-            PlayerItem newPlayerItem = Instantiate(playerItemPrefab, playerItemParent);
-            newPlayerItem.SetPlayerInfo(PhotonNetwork.LocalPlayer);
-            newPlayerItem.ApplyLocalChanges();
-        }
-        
+ 
         PhotonNetwork.AutomaticallySyncScene = true;
 
     }
