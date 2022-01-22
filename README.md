@@ -1,5 +1,5 @@
 #GTU CSE343 course project. Multiplayer 2D top-down shooter game developed on Unity. Photon PUN is used for networking. 
-#CREDITS:
+\nCREDITS:
 #Networking: Emre Sezer
 #Gameplay: Emre Sezer | Bilal Yalçınkaya
 #UI: Ahmet Okur | Melih Sapmaz
