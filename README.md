@@ -1,4 +1,4 @@
-GTU CSE343 course project. Multiplayer 2D top-down shooter game developed on Unity. Photon PUN is used for networking. \
+Multiplayer 2D top-down shooter game developed on Unity. Photon PUN is used for networking. \
 Play Store page: https://play.google.com/store/apps/details?id=com.DefaultCompany.Multi \
 \
 CREDITS: \
